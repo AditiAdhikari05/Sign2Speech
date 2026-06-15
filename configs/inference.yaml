@@ -1,0 +1,23 @@
+# Live inference / sign_to_speech.py settings
+model_path: models/base/best.pt
+user_model_path: models/user/best.pt   # used if it exists (Checkpoint 7)
+confidence_threshold: 0.85             # min confidence to accept a prediction
+hold_duration_seconds: 1.5             # how long to hold a sign before registering
+camera_index: 0                        # 0 = default webcam
+frame_width: 640
+frame_height: 480
+imgsz: 224
+
+# NLP / sentence cleanup (Checkpoint 4)
+use_claude_api: false                  # set to true after getting API key
+claude_model: claude-haiku-4-5-20251001
+
+# Emergency phrases (Checkpoint 3)
+emergency_phrases:
+  "1": "I need a doctor"
+  "2": "Please call 911"
+  "3": "I am deaf"
+  "4": "I am allergic to something, please help"
+  "5": "Please write it down"
+  "6": "I do not understand"
+  "7": "Please speak slowly"

@@ -1,0 +1,18 @@
+# YOLO11 Classification Training Configuration
+model: yolo11n-cls.pt        # base model (swap to yolo11s-cls.pt for better accuracy)
+data: data/processed         # path to dataset root (contains train/ and val/)
+epochs: 50
+imgsz: 224
+batch: 64                    # reduce to 32 if out-of-memory
+device: 0                    # 0 = GPU, cpu = CPU only
+workers: 4
+patience: 10                 # early stopping — stops if no improvement for 10 epochs
+save: true
+project: runs/classify
+name: train
+exist_ok: false
+pretrained: true
+optimizer: auto
+lr0: 0.01
+dropout: 0.0
+val: true

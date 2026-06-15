@@ -1,0 +1,53 @@
+# Model weights — too large for git
+*.pt
+*.pth
+*.onnx
+
+# Dataset — download separately, never commit
+data/raw/*
+data/processed/train/*/
+data/processed/val/*/
+!data/raw/.gitkeep
+!data/processed/train/.gitkeep
+!data/processed/val/.gitkeep
+
+# Sign videos — download separately
+assets/signs/*
+!assets/signs/.gitkeep
+
+# Ultralytics auto-generated outputs
+runs/
+
+# Secrets
+.env
+
+# User-personalized models
+models/user/*
+!models/user/.gitkeep
+
+# Base trained weights (too large)
+models/base/*
+!models/base/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Logs
+logs/*
+!logs/.gitkeep
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
