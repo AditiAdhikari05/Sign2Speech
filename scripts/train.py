@@ -5,14 +5,13 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "project"
 
 from ultralytics import YOLO
 
-model = YOLO("yolo11n-cls.pt")
+model = YOLO(os.path.join(os.path.dirname(__file__), "..", "models", "best.pt"))
 
 model.train(
     data=os.path.join(os.path.dirname(__file__), "..", "data", "processed"),
-    epochs=10,
+    epochs=30,
     imgsz=224,
     batch=32,
-    fraction=0.3,
     project=os.path.join(os.path.dirname(__file__), "..", "runs"),
     name="classify",
 )
